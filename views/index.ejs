@@ -1,0 +1,108 @@
+<%- include('./partials/header.ejs') %>
+    <div id="main">
+        <div class="part1">
+            <div id="login1">
+                <h1 id="firsth1">Sign in</h1>
+                <div class="circle1div">
+                    <a href="/auth/facebook"><div class="circle1"><i class="ri-facebook-fill"></i></div></a>
+                    <a href="/auth/google"><div class="circle1"><i class="ri-google-fill"></i></div></a>
+                    <a href="#"><div class="circle1"><i class="ri-twitter-x-fill"></i></div></a>   
+                </div>
+            <!-- Existing user will login from here -->
+                <form id="form1" action="/login" method="post">
+                    <p id="p1">or use your account</p>
+                    <input class="inp" autocomplete="off" type="email" placeholder="Email or Username" name="email" >
+                    <input class="inp" autocomplete="off" type="password" placeholder="Password" name="password" >
+                    <p id="p2">Forgot your password?</p>
+                    <input id="btn1" type="submit" value="SIGN IN">
+                </form>
+            </div>
+
+            <div id="signup2">
+                <h1>Create Account</h1>
+                <div id="circle2div">
+                    <a href="/auth/facebook"><div class="circle1"><i class="ri-facebook-fill"></i></div></a>
+                    <a href="/auth/google"><div class="circle1"><i class="ri-google-fill"></i></div></a>
+                    <a href="#"><div class="circle1"><i class="ri-twitter-x-fill"></i></div></a>   
+                </div>
+                <h3 id="signupP">or use your email for registration</h3>
+                
+            <!-- I am creating a new user from here -->
+                <form id="form2" action="/register" method="POST">
+                    <input class="inp2" type="email" placeholder="Email" name="email">
+                    <input class="inp2" type="text" placeholder="Username" name="username">
+                    <input class="inp2" type="text" placeholder="Name" name="name" >
+                    <input class="inp2" type="password" placeholder="Password" name="password">
+                    <input id="btn2" type="submit" value="SIGN UP">
+                </form>
+            </div>
+        </div>
+
+        <div class="part2">
+            <div id="signup1">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start</p>
+                <p>journey with us</p>
+                <button class="swap" id="signup1btn">SIGN UP</button>
+            </div>
+            <div id="login2">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login</p>
+                <p>with your personal info</p>
+                <button class="swap" id="login2btn">SIGN IN</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var swap = document.querySelectorAll(".swap")
+        var part1 = document.querySelector(".part1")
+        var part2 = document.querySelector(".part2")
+        var login1 = document.querySelector("#login1")
+        var signup1 = document.querySelector("#signup1");
+        var login2 = document.querySelector("#login2");
+        var signup2 = document.querySelector("#signup2")
+        var flag = 1;
+ 
+        swap.forEach(button => {
+            button.addEventListener("click",()=>{
+                if(flag){
+                    login1.style.visibility = "hidden";
+                    login1.style.opacity = 0;
+                    login1.style.position = "absolute";  // Remove from layout
+                    signup1.style.visibility = "hidden";
+                    signup1.style.opacity = 0;
+                    signup1.style.position = "absolute";  // Remove from layout
+                    main.classList.toggle("swapped");
+                    
+                    login2.style.visibility = "visible";
+                    login2.style.opacity = 1;
+                    login2.style.position = "relative";  // Show in layout
+                    signup2.style.visibility = "visible";
+                    signup2.style.opacity = 1;
+                    signup2.style.position = "relative";  // Show in layout
+                    flag = 0;
+                }
+                else{
+                    login2.style.visibility = "hidden";
+                    login2.style.opacity = 0;
+                    login2.style.position = "absolute";  // Remove from layout
+                    signup2.style.visibility = "hidden";
+                    signup2.style.opacity = 0;
+                    signup2.style.position = "absolute";  // Remove from layout
+                    main.classList.toggle("swapped");
+
+            // Show login1 and signup1
+                    login1.style.visibility = "visible";
+                    login1.style.opacity = 1;
+                    login1.style.position = "relative";  // Show in layout
+                    signup1.style.visibility = "visible";
+                    signup1.style.opacity = 1;
+                    signup1.style.position = "relative";  // Show in layout     
+                    flag = 1;
+                }
+            })  
+        });
+    </script>
+
+<%- include('./partials/footer.ejs') %>

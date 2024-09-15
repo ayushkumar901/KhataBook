@@ -1,0 +1,296 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: rgb(236, 231, 231);
+}
+#main{
+    height: 63vh;
+    width: 76vw;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 35%;
+    overflow: hidden;
+
+    /* transition: transform 1s ease; Transition for smooth swapping */
+
+}
+#main.swapped .part1 {
+    transform: translateX(100%);
+}
+
+#main.swapped .part2 {
+    transform: translateX(-100%);
+}
+.part1{
+    height: 63vh;
+    width: 38vw;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: all ease .5s;
+}
+.part1 #login1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 1rem;
+    /* display: none; */
+    transition: visibility 0s, opacity 0.5s ease;
+    opacity: 1;
+    visibility: visible;
+}
+.part1 #login1 #firsth1{
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+#form1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.circle1div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.circle1div a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+    width: 2.3rem;
+    background-color: white;
+    border-radius: 40%;
+    box-shadow: 2px 2px 60px rgba(34, 34, 34, 0.329);
+    color: black;
+    text-decoration: none;
+}
+#form1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .5rem;
+}
+#form1 .inp{
+    background-color: rgb(222, 222, 222);
+    padding: .4rem;
+    outline: none;
+    height: 2rem;
+    width: 17rem;
+    border: none;
+    border-radius: .1rem;
+    font-size: .8rem;
+}
+#form1 .inp::placeholder{
+    font-size: .8rem;
+    color: gray;
+}
+#form1 #p1{
+    font-size: .8rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+#form1 #p2{
+    font-size: .9rem;
+    font-weight: 400;
+    margin-top: .5rem;
+}
+#form1 #btn1{
+    padding: .6rem 3rem;
+    background-color: rgb(255, 64, 0);
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+#form1 #btn1:active{
+    scale: .95;
+}
+
+.part2{
+    height: 63vh;
+    width: 38vw;
+    background-color: rgb(255, 64, 0);
+    position: absolute;
+    right: 0;
+    transition: all ease .5s;
+}
+.part2 #signup1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8rem 2rem;
+    /* display: none; */
+    transition: visibility 0s, opacity 0.5s ease;
+    opacity: 1;
+    visibility: visible;
+}
+.part2 #signup1 h1{
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: .8rem;
+}
+.part2 #signup1 p{
+    color: rgb(224, 222, 222);
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+.part2 #signup1 #signup1btn{
+    margin-top: 1rem;
+    padding: .6rem 3rem;
+    background-color: transparent;
+    border: 1px solid rgb(224, 222, 222);
+    border-radius: 2rem;
+    color: white;
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+.part2 #signup1 #signup1btn:active{
+    scale: .95;
+}
+#signup2{
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .7rem;
+    transition: visibility 0s, opacity 0.5s ease;
+    visibility: hidden;
+    opacity: 0;
+    /* display: none; */
+}
+#signup2 h1{
+    font-size: 2rem;
+    font-weight: 700;
+}
+#signup2 p{
+    margin-top: .4rem;
+    font-size: .8rem;
+    font-weight: 300;
+    letter-spacing: .5px;    
+}
+#signup2 #circle2div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+#signup2 #circle2div a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+    width: 2.3rem;
+    background-color: white;
+    border-radius: 40%;
+    box-shadow: 2px 2px 60px rgba(34, 34, 34, 0.329);
+    color: black;
+    text-decoration: none;
+}
+#form2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .4rem;
+}
+#form2 .inp2{
+    background-color: rgb(241, 241, 241);
+    padding: .4rem;
+    outline: none;
+    height: 2rem;
+    width: 17rem;
+    border: none;
+    border-radius: .1rem;
+    font-size: .8rem;
+}
+#form2 .inp2::placeholder{
+    font-size: .8rem;
+    color: gray;
+}
+#form2 #btn2{
+    margin-top: .4rem;
+    padding: .6rem 3rem;
+    background-color: rgb(255, 64, 0);
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+#form2 #btn2:active{
+    scale: .95;
+}
+#login2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8rem 2rem;
+    transition: visibility 0s, opacity 0.5s ease;
+    visibility: hidden;
+    opacity: 0;
+    /* display: none; */
+}
+#login2 h1{
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: .8rem;
+}
+#login2 p{
+    color: rgb(224, 222, 222);
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+#login2 #login2btn{
+    margin-top: 1rem;
+    padding: .6rem 3rem;
+    background-color: transparent;
+    border: 1px solid rgb(224, 222, 222);
+    border-radius: 2rem;
+    color: white;
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+#login2 #login2btn:active{
+    scale: .95;
+}
+#signupP{
+    font-weight: 500;
+    color: grey;
+    font-size: 13px;
+}
